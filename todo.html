@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>The List that never ends</title>
+    <link rel="stylesheet" href="todo.css">
+    <script src="todo.js" defer></script>
+</head>
+<body onload="bootstrap()">
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#add">Add</a></li>
+            <li><a href="#finish">Finish</a></li>
+            <li><a href="#display">Display</a></li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div id="home">
+            <!-- Code for Q1 starts-->
+            <div id="home">
+              <h2>Welcome to the To-Do List App</h2>
+              <p>This is a simple to-do list application that allows you to manage your tasks efficiently.</p>
+              <p>Start organizing your tasks today!</p>
+            <!-- Code for Q1 ends-->
+            </div>
+        </div>
+        <div id="add">
+            <h2>Add a New Task to the List</h2> 
+            <!-- Code for Q2 starts. Accept new task from user. 
+              Finally, when the user clicks the submit button,
+              use the onclick event to call addfunction() in
+              todo.js file. Note that you can use something
+              similar to <body onload="bootstrap()"> instead of 
+              using an addEventListener. 
+         -->
+            <form onsubmit="event.preventDefault(); addfunction();">
+              Serial No.: <input type="text" id="taskSerial" required><br>
+              Task Name: <input type="text" id="taskName" required><br>
+              Priority:
+              <select id="taskPriority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select><br>
+              Deadline: <input type="date" id="taskDeadline" required><br>
+              <button type="submit">Submit</button>
+            <!-- Code for Q2 ends -->
+            </form>
+        </div>
+        <div id="finish">
+            <h2>Select a Task to Finish</h2>
+            <form onsubmit="event.preventDefault(); finishfunction();">
+            <!-- Code for Q3 starts. Finish a task given the ID/Sno. 
+                 When the user clicks the submit button, use the onclick
+                 event to call finishfunction() in todo.js file. 
+            -->
+            Task ID/Sno to Finish: <input type="text" id="finishTaskId" required>
+            <button type="submit">Finish Task</button>
+            <!-- Code for Q3 ends -->
+            </form>
+        </div>
+        <div id="display">
+            <!-- HTML code for Q4 has been written already.
+                 You will have to write the corresponding JS code
+                 to populate the tables. 
+                 An important design choice involves when to call the 
+                 JS function that populates the tables.
+            -->
+            <!-- Display outstanding list of Tasks -->
+            <table id="displayoutstanding">
+                <thead>
+                    <tr>
+                        <th>Sno</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <!-- Display Completed Tasks -->
+            <table id="displaycompleted">
+                <thead>
+                    <tr>
+                        <th>Sno</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
